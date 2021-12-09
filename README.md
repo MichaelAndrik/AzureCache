@@ -80,6 +80,4 @@ For more detailed information about caching, see [API Management caching policie
 
 [Click here](https://docs.microsoft.com/en-us/learn/modules/improve-api-performance-with-apim-caching-policy/) to a complete guide on how to add caching to Azure API Management.
 
-## SUMMARY FROM ALL METHODS
-
-<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQlNHXli9nMAaZoz_Wk2iKl5qCNAoGOBBnfLptHAC77sC1OVxQMgYKlozr0Lwo5awqEva67CFaFh81g/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+To see a **SUMMARY FROM ALL METHODS** follow this [link](https://docs.google.com/spreadsheets/d/1P30AN88s0LwahxEQr-1ZnEdPYr2wVWs6mpnstRrp5oE/edit?usp=sharing).
