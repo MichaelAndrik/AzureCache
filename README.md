@@ -80,4 +80,16 @@ For more detailed information about caching, see [API Management caching policie
 
 [Click here](https://docs.microsoft.com/en-us/learn/modules/improve-api-performance-with-apim-caching-policy/) to a complete guide on how to add caching to Azure API Management.
 
+## Use an external cache
+
+API Management instances usually have an `internal cache`, which is used to store prepared responses to requests. However, if you prefer, you can use an external cache instead. One possible external cache system that you can use is the `Azure Cache for Redis` service.
+
+You might choose to use an external cache because:
+
+- You want to `avoid the cache being cleared` when the API Management service is updated.
+- You want to `have greater control` over the cache configuration than the internal cache allows.
+- You want to `cache more data` than can be stored in the internal cache.
+
+Another reason to configure an external cache is that you want to use caching with the `consumption pricing tier`. This tier follows serverless design principal and you should use it with serverless web APIs. For this reason, `it has no internal cache`. If you want to use caching with an API Management instance in the consumption tier, you must use an external cache.
+
 To see a **SUMMARY FROM ALL METHODS** follow this [link](https://docs.google.com/spreadsheets/d/1P30AN88s0LwahxEQr-1ZnEdPYr2wVWs6mpnstRrp5oE/edit?usp=sharing).
