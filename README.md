@@ -62,58 +62,36 @@ Every plan is adjusted to level in which you can balance the price as you requie
 
 More about Azure Cache for Redis pricing and features, see [Azure Cache for Redis Pricing and Features](https://azure.microsoft.com/en-us/pricing/details/cache/).
 
-### Prerequisites
-
-- Azure subscription - [create one for free](https://azure.microsoft.com/free/).
-- `Python 2 or 3`
-
-## Create an Azure Cache for Redis instance
-
-1. To create a cache, sign in to the Azure portal and select `Create a resource`.
-![Create a resource](https://docs.microsoft.com/en-us/azure/azure-cache-for-redis/includes/media/redis-cache-create/create-resource.png)
-2. On the New page, select `Databases` and then select `Azure Cache for Redis`.
-![Create a resource](https://docs.microsoft.com/en-us/azure/azure-cache-for-redis/includes/media/redis-cache-create/select-cache.png)
-
-3. On the `New Redis Cache` page, configure the settings for your new cache.
-4. Select the `Networking` tab or select the `Networking` button at the bottom of the page.
-5. In the `Networking` tab, select your connectivity method.
-
-6. Select the `Next: Advanced` tab or select the `Next: Advanced` button on the bottom of the page.
-
-7. In the `Advanced` tab for a basic or standard cache instance, select the enable toggle if you want to enable a non-TLS port. You can also select which Redis version you would like use, either 4 or 6.
-
-![Redis version](https://docs.microsoft.com/en-us/azure/azure-cache-for-redis/includes/media/redis-cache-create/cache-redis-version.png)
-
-8. In the `Advanced` tab for premium cache instance, configure the settings for non-TLS port, clustering, and data persistence. You can also select which Redis version you would like use, either 4 or 6.
-
-9. Select the `Next: Tags` tab or select the Next: Tags button at the bottom of the page.
-
-10. Optionally, in the `Tags` tab, enter the name and value if you wish to categorize the resource.
-
-11. Select R`eview + create.` You're taken to the Review + create tab where Azure validates your configuration.
-
-12. After the green Validation passed message appears, select `Create`.
-
-> It takes a while for the cache to create. You can monitor progress on the Azure Cache for Redis Overview page. When Status shows as Running, the cache is ready to use.
-
-## Retrieve host name, ports, and access keys from the Azure portal
-
-To connect to an Azure Cache for Redis instance, cache clients need the host name, ports, and a key for the cache. Some clients might refer to these items by slightly different names. You can get the host name, ports, and keys from the [Azure portal](https://portal.azure.com/).
-
-- To get the access keys, from your cache left navigation, select `Access keys`.
-
-![Azure Cache for Redis keys](https://docs.microsoft.com/en-us/azure/azure-cache-for-redis/includes/media/redis-cache-access-keys/redis-cache-keys.png)
-
-To get the host name and ports, from your cache left navigation, select `Properties`. The host name is of the form `<DNS name>.redis.cache.windows.net`.
-
-![Azure Cache for Redis properties](https://docs.microsoft.com/en-us/azure/azure-cache-for-redis/includes/media/redis-cache-access-keys/redis-cache-hostname-ports.png)
-
-## Install redis-py
-
-[Redis-py](https://github.com/redis/redis-py) is a Python interface to Azure Cache for Redis. Use the Python packages tool, pip, to install the redis-py package from a command prompt.
-
-The following example used pip3 for Python 3 to install redis-py on Windows 10 from an Administrator command prompt.
-
-![Install the redis-py Python interface to Azure Cache for Redis](https://docs.microsoft.com/en-us/azure/azure-cache-for-redis/media/cache-python-get-started/cache-python-install-redis-py.png)
+To see a complete guide on how to install and use Azure Cache for Redis, see links provided in [Google Sheet]() provided.
 
 [`CHECK redis_azure.py`](redis_azure.ipynb) for an example of how to use the redis-py package.
+
+## API Management
+
+To use API Management, administrators create APIs. Each API consists of one or more operations, and each API can be added to one or more products. To use an API, developers subscribe to a product that contains that API, and then they can call the API's operation, subject to any usage policies that may be in effect.
+
+### Add caching to improve performance in Azure API Management
+
+API Management policies are configurable modules that you can add to APIs to change their behaviors. Policies can do things like cache responses, transform documents and values, call webhooks for notification or audit purposes, and retry requests after transient failures. This module will use policies to enable caching in order to improve API performance under load.
+
+APIs and operations in API Management can be configured with response caching. Response caching can significantly reduce latency for API callers and backend load for API providers.
+
+For more detailed information about caching, see [API Management caching policies](https://docs.microsoft.com/en-us/azure/api-management/api-management-caching-policies) and [Custom caching in Azure API Management](https://docs.microsoft.com/en-us/azure/api-management/api-management-sample-cache-by-key).
+
+[Click here](https://docs.microsoft.com/en-us/learn/modules/improve-api-performance-with-apim-caching-policy/) to a complete guide on how to add caching to Azure API Management.
+
+## Use an external cache
+
+API Management instances usually have an `internal cache`, which is used to store prepared responses to requests. However, if you prefer, you can use an external cache instead. One possible external cache system that you can use is the `Azure Cache for Redis` service.
+
+You might choose to use an external cache because:
+
+- You want to `avoid the cache being cleared` when the API Management service is updated.
+- You want to `have greater control` over the cache configuration than the internal cache allows.
+- You want to `cache more data` than can be stored in the internal cache.
+
+Another reason to configure an external cache is that you want to use caching with the `consumption pricing tier`. This tier follows serverless design principal and you should use it with serverless web APIs. For this reason, `it has no internal cache`. If you want to use caching with an API Management instance in the consumption tier, you must use an external cache.
+
+To see a **SUMMARY FROM ALL METHODS** follow this [link](https://docs.google.com/spreadsheets/d/1P30AN88s0LwahxEQr-1ZnEdPYr2wVWs6mpnstRrp5oE/edit?usp=sharing).
+
+<img src="sheet.png">
