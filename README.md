@@ -93,3 +93,5 @@ You might choose to use an external cache because:
 Another reason to configure an external cache is that you want to use caching with the `consumption pricing tier`. This tier follows serverless design principal and you should use it with serverless web APIs. For this reason, `it has no internal cache`. If you want to use caching with an API Management instance in the consumption tier, you must use an external cache.
 
 To see a **SUMMARY FROM ALL METHODS** follow this [link](https://docs.google.com/spreadsheets/d/1P30AN88s0LwahxEQr-1ZnEdPYr2wVWs6mpnstRrp5oE/edit?usp=sharing).
+
+<img src="sheet.png">
